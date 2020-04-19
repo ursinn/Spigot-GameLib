@@ -25,6 +25,13 @@
 
 package dev.ursinn.spigot.gamelib.enums;
 
+/**
+ * Enum - Stats
+ *
+ * @author Ursin Filli
+ * @version 1.0
+ * @since 1.0
+ */
 public enum GameStatsEnum {
 
     NONE(0),
@@ -33,7 +40,7 @@ public enum GameStatsEnum {
     WINS(3),
     LOSES(4);
 
-    private int id;
+    private final int id;
 
     GameStatsEnum(int id) {
         this.id = id;

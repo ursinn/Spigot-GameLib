@@ -25,7 +25,76 @@
 
 package dev.ursinn.spigot.gamelib.utils;
 
+import dev.ursinn.spigot.gamelib.events.GameCountdownEvent;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+
+/**
+ * Util - Countdown
+ *
+ * @author Ursin Filli
+ * @version 1.0
+ * @since 1.0
+ */
 public class GameCountdownUtils {
 
+    private final Plugin plugin;
+    private int taskId;
+    private int countdown;
 
+    /**
+     * Constructor
+     *
+     * @param plugin    Plugin instance
+     * @param countdown Time
+     * @since 1.0
+     */
+    public GameCountdownUtils(Plugin plugin, int countdown) {
+        this.countdown = countdown;
+        this.plugin = plugin;
+    }
+
+    /**
+     * Run the Countdown
+     *
+     * @since 1.0
+     */
+    public void run() {
+        taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            Bukkit.getPluginManager().callEvent(new GameCountdownEvent(countdown));
+            if (countdown == 0) {
+                Bukkit.getScheduler().cancelTask(taskId);
+            }
+            countdown--;
+        }, 0L, 20L);
+    }
+
+    /**
+     * Stop the Countdown
+     *
+     * @since 1.0
+     */
+    public void stop() {
+        Bukkit.getScheduler().cancelTask(taskId);
+    }
+
+    /**
+     * Get Time
+     *
+     * @return Time left
+     * @since 1.0
+     */
+    public int getCountdown() {
+        return countdown;
+    }
+
+    /**
+     * Set Time
+     *
+     * @param countdown Time
+     * @since 1.0
+     */
+    public void setCountdown(int countdown) {
+        this.countdown = countdown;
+    }
 }

@@ -25,12 +25,19 @@
 
 package dev.ursinn.spigot.gamelib.enums;
 
+/**
+ * Enum - Coins
+ *
+ * @author Ursin Filli
+ * @version 1.0
+ * @since 1.0
+ */
 public enum GameCoinsEnum {
 
     NONE(0),
     OUR(1);
 
-    private int id;
+    private final int id;
 
     GameCoinsEnum(int id) {
         this.id = id;

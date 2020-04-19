@@ -23,26 +23,60 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.utils;
+package dev.ursinn.spigot.gamelib.apis;
 
-import dev.ursinn.java.databaselib.sql.MySQL;
-import dev.ursinn.spigot.gamelib.enums.GameStatsEnum;
+import dev.ursinn.java.databaselib.sql.SqlDatabase;
+import dev.ursinn.spigot.gamelib.enums.GameStatusEnum;
 
-public class GameStatsUtils {
+/**
+ * API - Server API
+ *
+ * @author Ursin Filli
+ * @version 1.0
+ * @since 1.0
+ */
+public class GameServerAPI {
 
-    private MySQL mySQL;
-    private String table;
+    private final SqlDatabase db;
+    private final String table;
 
-    GameStatsUtils(String game, String prefix, MySQL mySQL) {
-        this.mySQL = mySQL;
+    /**
+     * Constructor
+     *
+     * @param prefix Table Prefix or null
+     * @param db     Database
+     * @since 1.0
+     */
+    public GameServerAPI(String prefix, SqlDatabase db) {
+        this.db = db;
         if (prefix != null)
-            this.table = prefix + "_" + game + "_stats";
+            this.table = prefix + "_servers";
         else
-            this.table = game + "_stats";
+            this.table = "servers";
     }
 
-    public void getTopPlayers(int top, GameStatsEnum statsEnum) {
-        //
+    public void init() {
+        // TODO
+    }
+
+    public void insert(String serverId, String game) {
+        // TODO
+    }
+
+    public void updateMap(String map) {
+        // TODO
+    }
+
+    public void updateStatus(GameStatusEnum statusEnum) {
+        // TODO
+    }
+
+    public void updateOnline(int online) {
+        // TODO
+    }
+
+    public void updateMax(int max) {
+        // TODO
     }
 
 }

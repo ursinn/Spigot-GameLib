@@ -23,32 +23,53 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.enums;
+package dev.ursinn.spigot.gamelib.events;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
 /**
- * Enum - Status
+ * Event - Player Chat
  *
  * @author Ursin Filli
  * @version 1.0
  * @since 1.0
  */
-public enum GameStatusEnum {
+public class GamePlayerChatEvent extends Event {
 
-    NONE(0),
-    LOBBY(1),
-    IN_GAME(2),
-    RESTART_LOBBY(3),
-    RESTART(4),
-    STARTED(5),
-    STOPPED(6);
+    private static final HandlerList handlers = new HandlerList();
+    private final Player player;
+    private final String message;
+    private boolean cancelled;
 
-    private final int id;
-
-    GameStatusEnum(int id) {
-        this.id = id;
+    public GamePlayerChatEvent(Player player, String message) {
+        this.player = player;
+        this.message = message;
     }
 
-    public int getId() {
-        return id;
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancel) {
+        cancelled = cancel;
+    }
+
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
     }
 }

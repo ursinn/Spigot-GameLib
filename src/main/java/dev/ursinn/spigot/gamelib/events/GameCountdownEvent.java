@@ -23,32 +23,37 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.enums;
+package dev.ursinn.spigot.gamelib.events;
+
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
 /**
- * Enum - Status
+ * Event - Countdown
  *
  * @author Ursin Filli
  * @version 1.0
  * @since 1.0
  */
-public enum GameStatusEnum {
+public class GameCountdownEvent extends Event {
 
-    NONE(0),
-    LOBBY(1),
-    IN_GAME(2),
-    RESTART_LOBBY(3),
-    RESTART(4),
-    STARTED(5),
-    STOPPED(6);
+    private static final HandlerList handlers = new HandlerList();
+    private final int countdown;
 
-    private final int id;
-
-    GameStatusEnum(int id) {
-        this.id = id;
+    public GameCountdownEvent(int countdown) {
+        this.countdown = countdown;
     }
 
-    public int getId() {
-        return id;
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
+    public int getCountdown() {
+        return countdown;
+    }
+
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
     }
 }

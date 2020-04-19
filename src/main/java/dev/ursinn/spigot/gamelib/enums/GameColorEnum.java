@@ -25,30 +25,47 @@
 
 package dev.ursinn.spigot.gamelib.enums;
 
+import org.bukkit.ChatColor;
+import org.bukkit.DyeColor;
+
 /**
- * Enum - Status
+ * Enum - Color
  *
  * @author Ursin Filli
  * @version 1.0
  * @since 1.0
  */
-public enum GameStatusEnum {
+public enum GameColorEnum {
 
-    NONE(0),
-    LOBBY(1),
-    IN_GAME(2),
-    RESTART_LOBBY(3),
-    RESTART(4),
-    STARTED(5),
-    STOPPED(6);
+    GREEN(ChatColor.GREEN, DyeColor.LIME),
+    RED(ChatColor.RED, DyeColor.RED),
+    BLUE(ChatColor.BLUE, DyeColor.LIGHT_BLUE),
+    YELLOW(ChatColor.YELLOW, DyeColor.YELLOW),
+    AQUA(ChatColor.AQUA, DyeColor.CYAN),
+    BLACK(ChatColor.BLACK, DyeColor.BLACK),
+    GOLD(ChatColor.GOLD, DyeColor.ORANGE),
+    DARK_BLUE(ChatColor.DARK_BLUE, DyeColor.BLUE),
+    DARK_GREEN(ChatColor.DARK_GREEN, DyeColor.GREEN),
+    DARK_RED(ChatColor.DARK_RED, DyeColor.BROWN),
+    DARK_PURPLE(ChatColor.DARK_PURPLE, DyeColor.MAGENTA),
+    GRAY(ChatColor.GRAY, DyeColor.SILVER),
+    DARK_GRAY(ChatColor.DARK_GRAY, DyeColor.GRAY),
+    LIGHT_PURPLE(ChatColor.LIGHT_PURPLE, DyeColor.PINK),
+    WHITE(ChatColor.WHITE, DyeColor.WHITE);
 
-    private final int id;
+    private final ChatColor chatColor;
+    private final DyeColor dyeColor;
 
-    GameStatusEnum(int id) {
-        this.id = id;
+    GameColorEnum(ChatColor chatColor, DyeColor dyeColor) {
+        this.chatColor = chatColor;
+        this.dyeColor = dyeColor;
     }
 
-    public int getId() {
-        return id;
+    public ChatColor getChatColor() {
+        return chatColor;
+    }
+
+    public DyeColor getDyeColor() {
+        return dyeColor;
     }
 }

@@ -25,13 +25,20 @@
 
 package dev.ursinn.spigot.gamelib.enums;
 
+/**
+ * Enum - Type
+ *
+ * @author Ursin Filli
+ * @version 1.0
+ * @since 1.0
+ */
 public enum GameTypeEnum {
 
     NONE(0),
     ARENA(1),
     SERVER(2);
 
-    private int id;
+    private final int id;
 
     GameTypeEnum(int id) {
         this.id = id;
