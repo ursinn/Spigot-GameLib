@@ -27,9 +27,14 @@ package dev.ursinn.spigot.gamelib.apis;
 
 import dev.ursinn.java.databaselib.sql.SQL;
 import dev.ursinn.spigot.gamelib.enums.GameCoinsEnum;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.economy.EconomyResponse;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.RegisteredServiceProvider;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 /**
  * API - Coins API
@@ -43,6 +48,8 @@ public class GameCoinsAPI {
     private final SQL db;
     private final String table;
     private final GameCoinsEnum coinsEnum;
+
+    private Economy economy;
 
     /**
      * Constructor
@@ -59,6 +66,8 @@ public class GameCoinsAPI {
             this.table = prefix + "_coins";
         else
             this.table = "coins";
+        if (coinsEnum == GameCoinsEnum.VAULT)
+            setupVault();
     }
 
     /**
@@ -87,10 +96,12 @@ public class GameCoinsAPI {
      * @since 1.0
      */
     private void initPlayer(String uuid) {
-        try {
-            db.update("INSERT INTO `" + table + "` (`uuid`) VALUES ('" + uuid + "');");
-        } catch (SQLException e) {
-            System.err.println("GameLib.GameCoinsAPI.initPlayer:" + e.getMessage());
+        if (coinsEnum == GameCoinsEnum.OUR) {
+            try {
+                db.update("INSERT INTO `" + table + "` (`uuid`) VALUES ('" + uuid + "');");
+            } catch (SQLException e) {
+                System.err.println("GameLib.GameCoinsAPI.initPlayer:" + e.getMessage());
+            }
         }
     }
 
@@ -106,6 +117,9 @@ public class GameCoinsAPI {
         if (coinsEnum == GameCoinsEnum.OUR) {
             int coins = getCoins(uuid) + value;
             setCoins(uuid, coins);
+        }
+        if (coinsEnum == GameCoinsEnum.VAULT) {
+            economy.depositPlayer(Bukkit.getOfflinePlayer(UUID.fromString(uuid)), value);
         }
     }
 
@@ -143,6 +157,10 @@ public class GameCoinsAPI {
             setCoins(uuid, coins);
             return true;
         }
+        if (coinsEnum == GameCoinsEnum.VAULT) {
+            EconomyResponse response = economy.withdrawPlayer(Bukkit.getOfflinePlayer(UUID.fromString(uuid)), value);
+            return response.transactionSuccess();
+        }
         return false;
     }
 
@@ -163,7 +181,19 @@ public class GameCoinsAPI {
                 System.err.println("GameLib.GameCoinsAPI.getCoins:" + e.getMessage());
             }
         }
+        if (coinsEnum == GameCoinsEnum.VAULT) {
+            return (int) economy.getBalance(Bukkit.getOfflinePlayer(UUID.fromString(uuid)));
+        }
         return 0;
+    }
+
+    private void setupVault() {
+        if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null)
+            return;
+        RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null)
+            return;
+        economy = rsp.getProvider();
     }
 
 }

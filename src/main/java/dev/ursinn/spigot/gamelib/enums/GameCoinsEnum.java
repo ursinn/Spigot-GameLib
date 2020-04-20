@@ -35,7 +35,8 @@ package dev.ursinn.spigot.gamelib.enums;
 public enum GameCoinsEnum {
 
     NONE(0),
-    OUR(1);
+    OUR(1),
+    VAULT(2);
 
     private final int id;
 
