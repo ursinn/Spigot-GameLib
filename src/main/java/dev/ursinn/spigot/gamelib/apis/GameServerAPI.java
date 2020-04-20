@@ -25,7 +25,7 @@
 
 package dev.ursinn.spigot.gamelib.apis;
 
-import dev.ursinn.java.databaselib.sql.SqlDatabase;
+import dev.ursinn.java.databaselib.sql.SQL;
 import dev.ursinn.spigot.gamelib.enums.GameStatusEnum;
 
 /**
@@ -37,7 +37,7 @@ import dev.ursinn.spigot.gamelib.enums.GameStatusEnum;
  */
 public class GameServerAPI {
 
-    private final SqlDatabase db;
+    private final SQL db;
     private final String table;
 
     /**
@@ -47,7 +47,7 @@ public class GameServerAPI {
      * @param db     Database
      * @since 1.0
      */
-    public GameServerAPI(String prefix, SqlDatabase db) {
+    public GameServerAPI(String prefix, SQL db) {
         this.db = db;
         if (prefix != null)
             this.table = prefix + "_servers";

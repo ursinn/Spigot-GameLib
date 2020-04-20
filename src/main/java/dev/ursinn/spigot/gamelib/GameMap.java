@@ -40,8 +40,9 @@ public class GameMap {
     private final String authors;
     private final Location spawn;
     private final int maxPlayers;
-    private final int heightMaxBottom;
-    private final int heightMaxTop;
+    private final int spawnProtectionBottomHeight;
+    private final int bottomHeight;
+    private final int topHeight;
 
     /**
      * Constructor
@@ -50,16 +51,18 @@ public class GameMap {
      * @param authors Map Authors
      * @param spawn Spawn Location
      * @param maxPlayers max Players for Map
-     * @param heightMaxBottom Bottom Height (Used in Some Games)
-     * @param heightMaxTop Max Reachable Height (Used in Some Games)
+     * @param spawnProtectionBottomHeight Spawn Protection Height (Used in Some Games)
+     * @param bottomHeight Bottom Height (Used in Some Games)
+     * @param topHeight Top Height (Used in Some Games)
      */
-    public GameMap(String name, String authors, Location spawn, int maxPlayers, int heightMaxBottom, int heightMaxTop) {
+    public GameMap(String name, String authors, Location spawn, int maxPlayers, int spawnProtectionBottomHeight, int bottomHeight, int topHeight) {
         this.name = name;
         this.authors = authors;
         this.spawn = spawn;
         this.maxPlayers = maxPlayers;
-        this.heightMaxBottom = heightMaxBottom;
-        this.heightMaxTop = heightMaxTop;
+        this.spawnProtectionBottomHeight = spawnProtectionBottomHeight;
+        this.bottomHeight = bottomHeight;
+        this.topHeight = topHeight;
     }
 
     public String getName() {
@@ -78,11 +81,15 @@ public class GameMap {
         return maxPlayers;
     }
 
-    public int getHeightMaxBottom() {
-        return heightMaxBottom;
+    public int getSpawnProtectionBottomHeight() {
+        return spawnProtectionBottomHeight;
     }
 
-    public int getHeightMaxTop() {
-        return heightMaxTop;
+    public int getBottomHeight() {
+        return bottomHeight;
+    }
+
+    public int getTopHeight() {
+        return topHeight;
     }
 }

@@ -25,7 +25,7 @@
 
 package dev.ursinn.spigot.gamelib.apis;
 
-import dev.ursinn.java.databaselib.sql.SqlDatabase;
+import dev.ursinn.java.databaselib.sql.SQL;
 import dev.ursinn.spigot.gamelib.enums.GameCoinsEnum;
 
 import java.sql.ResultSet;
@@ -40,7 +40,7 @@ import java.sql.SQLException;
  */
 public class GameCoinsAPI {
 
-    private final SqlDatabase db;
+    private final SQL db;
     private final String table;
     private final GameCoinsEnum coinsEnum;
 
@@ -52,7 +52,7 @@ public class GameCoinsAPI {
      * @param coinsEnum Coins Enum
      * @since 1.0
      */
-    public GameCoinsAPI(String prefix, SqlDatabase db, GameCoinsEnum coinsEnum) {
+    public GameCoinsAPI(String prefix, SQL db, GameCoinsEnum coinsEnum) {
         this.db = db;
         this.coinsEnum = coinsEnum;
         if (prefix != null)

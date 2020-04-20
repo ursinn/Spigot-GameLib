@@ -25,7 +25,7 @@
 
 package dev.ursinn.spigot.gamelib.apis;
 
-import dev.ursinn.java.databaselib.sql.SqlDatabase;
+import dev.ursinn.java.databaselib.sql.SQL;
 import dev.ursinn.spigot.gamelib.enums.GameStatsEnum;
 
 import java.sql.ResultSet;
@@ -41,7 +41,7 @@ import java.util.ArrayList;
  */
 public class GameStatsAPI {
 
-    private final SqlDatabase db;
+    private final SQL db;
     private final String table;
 
     /**
@@ -51,7 +51,7 @@ public class GameStatsAPI {
      * @param prefix Table Prefix or null
      * @param db     Database
      */
-    public GameStatsAPI(String game, String prefix, SqlDatabase db) {
+    public GameStatsAPI(String game, String prefix, SQL db) {
         this.db = db;
         if (prefix != null)
             this.table = prefix + "_" + game + "_stats";
