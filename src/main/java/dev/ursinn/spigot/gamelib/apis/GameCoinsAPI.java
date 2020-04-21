@@ -66,8 +66,7 @@ public class GameCoinsAPI {
             this.table = prefix + "_coins";
         else
             this.table = "coins";
-        if (coinsEnum == GameCoinsEnum.VAULT)
-            setupVault();
+
     }
 
     /**
@@ -86,6 +85,14 @@ public class GameCoinsAPI {
             } catch (SQLException e) {
                 System.err.println("GameLib.GameCoinsAPI.initStats:" + e.getMessage());
             }
+        }
+        if (coinsEnum == GameCoinsEnum.VAULT) {
+            if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null)
+                return;
+            RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
+            if (rsp == null)
+                return;
+            economy = rsp.getProvider();
         }
     }
 
@@ -185,15 +192,6 @@ public class GameCoinsAPI {
             return (int) economy.getBalance(Bukkit.getOfflinePlayer(UUID.fromString(uuid)));
         }
         return 0;
-    }
-
-    private void setupVault() {
-        if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null)
-            return;
-        RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null)
-            return;
-        economy = rsp.getProvider();
     }
 
 }

@@ -55,11 +55,7 @@ public class GameServerAPI {
             this.table = "servers";
     }
 
-    public void init() {
-        // TODO
-    }
-
-    public void insert(String serverId, String game) {
+    public void init(String serverId, String game) {
         // TODO
     }
 
