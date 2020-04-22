@@ -23,68 +23,34 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.apis;
+package dev.ursinn.spigot.gamelib.utils;
 
-import dev.ursinn.java.databaselib.sql.SQL;
-import dev.ursinn.spigot.gamelib.enums.GameStatusEnum;
+import org.bukkit.GameMode;
+import org.bukkit.inventory.PlayerInventory;
 
 /**
- * API - Server API
+ * Util - Player Helper
  *
  * @author Ursin Filli
  * @version 1.0
  * @since 1.0
  */
-public class GameServerAPI {
+public class GamePlayerHelper {
 
-    private final SQL db;
-    private final String table;
-    private String serverId;
+    private PlayerInventory inventory;
+    private GameMode gameMode;
 
-    /**
-     * Constructor
-     *
-     * @param prefix Table Prefix or null
-     * @param db     Database
-     * @since 1.0
-     */
-    public GameServerAPI(String prefix, SQL db) {
-        this.db = db;
-        if (prefix != null)
-            this.table = prefix + "_servers";
-        else
-            this.table = "servers";
+    public GamePlayerHelper(PlayerInventory inventory, GameMode gameMode) {
+        this.inventory = inventory;
+        this.gameMode = gameMode;
     }
 
-    public void init(String serverId, String game) {
-        this.serverId = serverId;
-        if (serverId == null)
-            return;
-        // TODO
+    public PlayerInventory getInventory() {
+        return inventory;
     }
 
-    public void updateMap(String map) {
-        if (serverId == null)
-            return;
-        // TODO
-    }
-
-    public void updateStatus(GameStatusEnum statusEnum) {
-        if (serverId == null)
-            return;
-        // TODO
-    }
-
-    public void updateOnline(int online) {
-        if (serverId == null)
-            return;
-        // TODO
-    }
-
-    public void updateMax(int max) {
-        if (serverId == null)
-            return;
-        // TODO
+    public GameMode getGameMode() {
+        return gameMode;
     }
 
 }

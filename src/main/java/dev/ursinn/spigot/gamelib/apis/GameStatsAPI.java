@@ -151,11 +151,21 @@ public class GameStatsAPI {
     /**
      * Get Top Players
      * @param top Top amount
-     * @param statsEnum Stats Enum
+     * @param statsEnum_1 Stats Enum
+     * @param statsEnum_2 Stats Enum
+     * @return UUID's
      * @since 1.0
      */
-    public void getTopPlayers(int top, GameStatsEnum statsEnum) {
-        // TODO
+    public ArrayList<String> getTopPlayers(int top, GameStatsEnum statsEnum_1, GameStatsEnum statsEnum_2) {
+        ArrayList<String> list = new ArrayList<>();
+        try {
+            ResultSet rs = db.getResult("SELECT DISTINCT `uuid` FROM `" + table + "` ORDER BY `stats_" + statsEnum_1.getId() + "` - `stats_" + statsEnum_2.getId() + "` DESC LIMIT " + top);
+            while (rs.next())
+                list.add(rs.getString("uuid"));
+        } catch (SQLException e) {
+            System.err.println("GameLib.GameStatsAPI.getStats:" + e.getMessage());
+        }
+        return list;
     }
 
 }
