@@ -40,15 +40,34 @@ public class GamePlayerHelper {
     private PlayerInventory inventory;
     private GameMode gameMode;
 
+    /**
+     * Constructor
+     *
+     * @param inventory Player Inventory
+     * @param gameMode Player GameMode
+     * @since 1.0
+     */
     public GamePlayerHelper(PlayerInventory inventory, GameMode gameMode) {
         this.inventory = inventory;
         this.gameMode = gameMode;
     }
 
+    /**
+     * Get The Players saved Inventory
+     *
+     * @return Player Inventory
+     * @since 1.0
+     */
     public PlayerInventory getInventory() {
         return inventory;
     }
 
+    /**
+     * Get The Players saved GameMode
+     *
+     * @return Player GameMode
+     * @since 1.0
+     */
     public GameMode getGameMode() {
         return gameMode;
     }

@@ -40,45 +40,104 @@ public class GameOptionsHelper {
 
     private final Plugin plugin;
 
+    /**
+     * Constructor
+     *
+     * @param plugin Plugin instance
+     * @since 1.0
+     */
     public GameOptionsHelper(Plugin plugin) {
         this.plugin = plugin;
         plugin.saveDefaultConfig();
-
     }
 
+    /**
+     * Get ServerId
+     *
+     * @return the Server Id
+     * @since 1.0
+     */
     public String getServerId() {
-        return plugin.getConfig().getString("");
+        return plugin.getConfig().getString("server.id");
     }
 
+    /**
+     * Get Game name
+     *
+     * @return Game name
+     * @since 1.0
+     */
     public String getGame() {
-        return plugin.getConfig().getString("");
+        return plugin.getConfig().getString("game.name");
     }
 
+    /**
+     * Is Server Mode
+     *
+     * @return Server Mode
+     * @since 1.0
+     */
     public boolean isServerMode() {
-        return plugin.getConfig().getBoolean("");
+        return plugin.getConfig().getBoolean("server.mode");
     }
 
+    /**
+     * Get Database Prefix
+     *
+     * @return Database Prefix
+     * @since 1.0
+     */
     public String getDatabasePrefix() {
-        return plugin.getConfig().getString("");
+        return plugin.getConfig().getString("database.prefix");
     }
 
+    /**
+     * Get SQL Based Database
+     *
+     * @return SQL Database
+     * @since 1.0
+     */
     public SQL getDatabase() {
         return null;
     }
 
+    /**
+     * Get GameCoinsEnum
+     *
+     * @return GameCoinsEnum
+     * @since 1.0
+     */
     public GameCoinsEnum getGameCoinsEnum() {
         return GameCoinsEnum.NONE;
     }
 
+    /**
+     * Is Metrics Allowed
+     *
+     * @return Metrics allowed
+     * @since 1.0
+     */
     public boolean useMetrics() {
-        return true;
+        return plugin.getConfig().getBoolean("settings.metrics");
     }
 
+    /**
+     * Is Update Check allowed
+     *
+     * @return Update Check allowed
+     * @since 1.0
+     */
     public boolean useUpdateChecker() {
-        return true;
+        return plugin.getConfig().getBoolean("settings.update");
     }
 
+    /**
+     * Is in Setup Mode
+     *
+     * @return setup status
+     * @since 1.0
+     */
     public boolean isSetup() {
-        return false;
+        return plugin.getConfig().getBoolean("settings.setup");
     }
 }

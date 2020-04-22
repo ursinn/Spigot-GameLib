@@ -61,11 +61,24 @@ public class GameUpdateCheckHelper {
         }
     };
 
+    /**
+     * Constructor
+     *
+     * @param id Spigot Plugin Id
+     * @param plugin Plugin instance
+     * @since 1.0
+     */
     public GameUpdateCheckHelper(int id, Plugin plugin) {
         this.id = id;
         this.plugin = plugin;
     }
 
+    /**
+     * Check if a Update available
+     *
+     * @return Update status
+     * @since 1.0
+     */
     public boolean isUpdate() {
         return update;
     }

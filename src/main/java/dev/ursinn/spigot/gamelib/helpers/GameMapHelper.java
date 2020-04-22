@@ -46,31 +46,66 @@ public class GameMapHelper {
     File file;
     FileConfiguration configuration;
 
+    /**
+     * Constructor
+     *
+     * @param plugin Plugin instance
+     * @since 1.0
+     */
     public GameMapHelper(Plugin plugin) {
         this.file = new File(plugin.getDataFolder(), "maps.yml");
         configuration = new YamlConfiguration();
         load();
     }
 
+    /**
+     * Get A Random Map
+     *
+     * @return a Game Map
+     * @since 1.0
+     */
     public GameMap getRandomMap() {
         return new GameMap("Map-A", "Map-A Authors", null, 20, 83, 0, 255);
     }
 
+    /**
+     * Get The Null Map for Setup Purposes Only
+     *
+     * @return a Game Map
+     * @since 1.0
+     */
     public GameMap getNullMap() {
         return new GameMap("", "", null, 0, 0, 0, 0);
     }
 
+    /**
+     * Add a Map
+     *
+     * @param map Game Map
+     * @since 1.0
+     */
     public void addMap(GameMap map) {
         // TODO
         save();
     }
 
+    /**
+     * Remove a Map
+     *
+     * @param name Name of the Map
+     * @since 1.0
+     */
     public void removeMap(String name) {
         // TODO
         save();
     }
 
-    public void save() {
+    /**
+     * Save The File to the Disk
+     *
+     * @since 1.0
+     */
+    private void save() {
         try {
             if (!file.exists())
                 configuration.save(file);
@@ -79,6 +114,11 @@ public class GameMapHelper {
         }
     }
 
+    /**
+     * Load The File from the Disk
+     *
+     * @since 1.0
+     */
     public void load() {
         try {
             configuration.load(file);
