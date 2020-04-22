@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.utils;
+package dev.ursinn.spigot.gamelib.helpers;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -38,7 +38,7 @@ import java.util.List;
  * @version 1.0
  * @since 1.0
  */
-public class GameItemUtils {
+public class GameItemHelper {
 
     private final Material material;
 
@@ -48,7 +48,7 @@ public class GameItemUtils {
      * @param material Item Material
      * @since 1.0
      */
-    public GameItemUtils(Material material) {
+    public GameItemHelper(Material material) {
         this.material = material;
     }
 

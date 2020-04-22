@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.utils;
+package dev.ursinn.spigot.gamelib.helpers;
 
 import dev.ursinn.spigot.gamelib.GameMap;
 import org.bukkit.configuration.InvalidConfigurationException;

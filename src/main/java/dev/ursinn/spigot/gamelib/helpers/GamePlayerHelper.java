@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.utils;
+package dev.ursinn.spigot.gamelib.helpers;
 
 import org.bukkit.GameMode;
 import org.bukkit.inventory.PlayerInventory;

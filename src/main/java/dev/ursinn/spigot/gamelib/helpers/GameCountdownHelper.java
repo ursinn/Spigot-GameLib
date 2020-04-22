@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.utils;
+package dev.ursinn.spigot.gamelib.helpers;
 
 import dev.ursinn.spigot.gamelib.events.GameCountdownEvent;
 import org.bukkit.Bukkit;
@@ -36,7 +36,7 @@ import org.bukkit.plugin.Plugin;
  * @version 1.0
  * @since 1.0
  */
-public class GameCountdownUtils {
+public class GameCountdownHelper {
 
     private final Plugin plugin;
     private int taskId;
@@ -49,7 +49,7 @@ public class GameCountdownUtils {
      * @param countdown Time
      * @since 1.0
      */
-    public GameCountdownUtils(Plugin plugin, int countdown) {
+    public GameCountdownHelper(Plugin plugin, int countdown) {
         this.countdown = countdown;
         this.plugin = plugin;
     }
