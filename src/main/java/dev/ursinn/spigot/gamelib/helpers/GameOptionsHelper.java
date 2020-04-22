@@ -25,76 +25,60 @@
 
 package dev.ursinn.spigot.gamelib.helpers;
 
-import dev.ursinn.spigot.gamelib.events.GameCountdownEvent;
-import org.bukkit.Bukkit;
+import dev.ursinn.java.databaselib.sql.SQL;
+import dev.ursinn.spigot.gamelib.enums.GameCoinsEnum;
 import org.bukkit.plugin.Plugin;
 
 /**
- * Helper - Countdown
+ * Helper - Options
  *
  * @author Ursin Filli
  * @version 1.0
  * @since 1.0
  */
-public class GameCountdownHelper {
+public class GameOptionsHelper {
 
     private final Plugin plugin;
-    private int taskId;
-    private int countdown;
 
-    /**
-     * Constructor
-     *
-     * @param plugin    Plugin instance
-     * @param countdown Time
-     * @since 1.0
-     */
-    public GameCountdownHelper(Plugin plugin, int countdown) {
-        this.countdown = countdown;
+    public GameOptionsHelper(Plugin plugin) {
         this.plugin = plugin;
+        plugin.saveDefaultConfig();
+
     }
 
-    /**
-     * Run the Countdown
-     *
-     * @since 1.0
-     */
-    public void run() {
-        taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
-            Bukkit.getPluginManager().callEvent(new GameCountdownEvent(countdown));
-            if (countdown == 0) {
-                Bukkit.getScheduler().cancelTask(taskId);
-            }
-            countdown--;
-        }, 0L, 20L);
+    public String getServerId() {
+        return plugin.getConfig().getString("");
     }
 
-    /**
-     * Stop the Countdown
-     *
-     * @since 1.0
-     */
-    public void stop() {
-        Bukkit.getScheduler().cancelTask(taskId);
+    public String getGame() {
+        return plugin.getConfig().getString("");
     }
 
-    /**
-     * Get Time
-     *
-     * @return Time left
-     * @since 1.0
-     */
-    public int getCountdown() {
-        return countdown;
+    public boolean isServerMode() {
+        return plugin.getConfig().getBoolean("");
     }
 
-    /**
-     * Set Time
-     *
-     * @param countdown Time
-     * @since 1.0
-     */
-    public void setCountdown(int countdown) {
-        this.countdown = countdown;
+    public String getDatabasePrefix() {
+        return plugin.getConfig().getString("");
+    }
+
+    public SQL getDatabase() {
+        return null;
+    }
+
+    public GameCoinsEnum getGameCoinsEnum() {
+        return GameCoinsEnum.NONE;
+    }
+
+    public boolean useMetrics() {
+        return true;
+    }
+
+    public boolean useUpdateChecker() {
+        return true;
+    }
+
+    public boolean isSetup() {
+        return false;
     }
 }

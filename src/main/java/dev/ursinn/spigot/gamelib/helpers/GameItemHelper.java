@@ -32,7 +32,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.List;
 
 /**
- * Util - Item
+ * Helper - Item
  *
  * @author Ursin Filli
  * @version 1.0

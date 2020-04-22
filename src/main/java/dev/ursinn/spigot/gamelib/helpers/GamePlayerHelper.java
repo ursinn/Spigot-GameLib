@@ -29,7 +29,7 @@ import org.bukkit.GameMode;
 import org.bukkit.inventory.PlayerInventory;
 
 /**
- * Util - Player Helper
+ * Helper - Player
  *
  * @author Ursin Filli
  * @version 1.0

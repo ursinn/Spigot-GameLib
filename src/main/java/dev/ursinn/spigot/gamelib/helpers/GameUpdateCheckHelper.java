@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.spigot.gamelib.utils;
+package dev.ursinn.spigot.gamelib.helpers;
 
 import org.bukkit.plugin.Plugin;
 
@@ -32,7 +32,14 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class GameUpdateChecker {
+/**
+ * Helper - Update Checker
+ *
+ * @author Ursin Filli
+ * @version 1.0
+ * @since 1.0
+ */
+public class GameUpdateCheckHelper {
 
     private final int id;
     private final Plugin plugin;
@@ -54,7 +61,7 @@ public class GameUpdateChecker {
         }
     };
 
-    public GameUpdateChecker(int id, Plugin plugin) {
+    public GameUpdateCheckHelper(int id, Plugin plugin) {
         this.id = id;
         this.plugin = plugin;
     }

@@ -35,7 +35,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Util - Map Helper
+ * Helper - Map
  *
  * @author Ursin Filli
  * @version 1.0
@@ -47,7 +47,7 @@ public class GameMapHelper {
     FileConfiguration configuration;
 
     public GameMapHelper(Plugin plugin) {
-        this.file = new File(plugin.getDataFolder(), "language.yml");
+        this.file = new File(plugin.getDataFolder(), "maps.yml");
         configuration = new YamlConfiguration();
         load();
     }
