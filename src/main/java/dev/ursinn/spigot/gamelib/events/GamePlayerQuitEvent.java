@@ -40,7 +40,6 @@ public class GamePlayerQuitEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
     private final Player player;
-    private boolean cancelled;
 
     public GamePlayerQuitEvent(Player player) {
         this.player = player;
@@ -54,16 +53,9 @@ public class GamePlayerQuitEvent extends Event {
         return player;
     }
 
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    public void setCancelled(boolean cancel) {
-        cancelled = cancel;
-    }
-
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
+
 }

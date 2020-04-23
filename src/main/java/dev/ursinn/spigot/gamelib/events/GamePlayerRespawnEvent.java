@@ -29,23 +29,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-/**
- * Event - Player Chat
- *
- * @author Ursin Filli
- * @version 1.0
- * @since 1.0
- */
-public class GamePlayerChatEvent extends Event {
+public class GamePlayerRespawnEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
     private final Player player;
-    private final String message;
-    private boolean cancelled;
 
-    public GamePlayerChatEvent(Player player, String message) {
+    public GamePlayerRespawnEvent(Player player) {
         this.player = player;
-        this.message = message;
     }
 
     public static HandlerList getHandlerList() {
@@ -56,20 +46,9 @@ public class GamePlayerChatEvent extends Event {
         return player;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    public void setCancelled(boolean cancel) {
-        cancelled = cancel;
-    }
-
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
+
 }

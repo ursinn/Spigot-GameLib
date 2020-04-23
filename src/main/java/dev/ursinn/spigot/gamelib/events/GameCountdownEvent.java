@@ -56,4 +56,5 @@ public class GameCountdownEvent extends Event {
     public HandlerList getHandlers() {
         return handlers;
     }
+
 }
