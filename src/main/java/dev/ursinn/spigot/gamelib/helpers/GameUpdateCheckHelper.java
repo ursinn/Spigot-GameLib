@@ -64,7 +64,7 @@ public class GameUpdateCheckHelper {
     /**
      * Constructor
      *
-     * @param id Spigot Plugin Id
+     * @param id     Spigot Plugin Id
      * @param plugin Plugin instance
      * @since 1.0
      */

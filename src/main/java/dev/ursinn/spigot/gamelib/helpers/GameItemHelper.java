@@ -95,7 +95,7 @@ public class GameItemHelper {
     /**
      * Get Item with Custom Name
      *
-     * @param name Item Name
+     * @param name   Item Name
      * @param amount Amount
      * @return ItemStack
      * @since 1.0
@@ -111,7 +111,7 @@ public class GameItemHelper {
     /**
      * Get Item that is Unbreakable with Custom Name
      *
-     * @param name Item Name
+     * @param name   Item Name
      * @param amount Amount
      * @return ItemStack
      * @since 1.0
@@ -127,9 +127,9 @@ public class GameItemHelper {
     /**
      * Get Item with Custom Name
      *
-     * @param name Item Name
+     * @param name   Item Name
      * @param amount Amount
-     * @param lore Item Lore
+     * @param lore   Item Lore
      * @return ItemStack
      * @since 1.0
      */
@@ -144,9 +144,9 @@ public class GameItemHelper {
     /**
      * Get Item that is Unbreakable with Custom Name and Lore
      *
-     * @param name Item name
+     * @param name   Item name
      * @param amount Amount
-     * @param lore Item Lore
+     * @param lore   Item Lore
      * @return ItemStack
      * @since 1.0
      */
@@ -161,7 +161,7 @@ public class GameItemHelper {
     /**
      * Get Item with Custom Name
      *
-     * @param name Item Name
+     * @param name   Item Name
      * @param amount Amount
      * @param damage Item Damage
      * @return ItemStack
@@ -176,9 +176,9 @@ public class GameItemHelper {
     /**
      * Get Item with Custom Name and Lore
      *
-     * @param name Item Name
+     * @param name   Item Name
      * @param amount Amount
-     * @param lore Item Lore
+     * @param lore   Item Lore
      * @param damage Item Damage
      * @return ItemStack
      * @since 1.0

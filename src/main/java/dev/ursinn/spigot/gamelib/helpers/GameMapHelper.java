@@ -26,6 +26,7 @@
 package dev.ursinn.spigot.gamelib.helpers;
 
 import dev.ursinn.spigot.gamelib.GameMap;
+import org.bukkit.Location;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -65,17 +66,19 @@ public class GameMapHelper {
      * @since 1.0
      */
     public GameMap getRandomMap() {
+        // TODO
         return new GameMap("Map-A", "Map-A Authors", null, 20, 83, 0, 255);
     }
 
     /**
-     * Get The Null Map for Setup Purposes Only
+     * Get Lobby Location
      *
-     * @return a Game Map
+     * @return Location
      * @since 1.0
      */
-    public GameMap getNullMap() {
-        return new GameMap("", "", null, 0, 0, 0, 0);
+    public Location getLobby() {
+        // TODO
+        return null;
     }
 
     /**

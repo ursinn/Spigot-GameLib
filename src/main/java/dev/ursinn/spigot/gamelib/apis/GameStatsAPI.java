@@ -132,7 +132,7 @@ public class GameStatsAPI {
     /**
      * Get Stats
      *
-     * @param uuid Player UUID
+     * @param uuid      Player UUID
      * @param statsEnum Stats Enum
      * @return Value
      * @since 1.0
@@ -150,7 +150,8 @@ public class GameStatsAPI {
 
     /**
      * Get Top Players
-     * @param top Top amount
+     *
+     * @param top         Top amount
      * @param statsEnum_1 Stats Enum
      * @param statsEnum_2 Stats Enum
      * @return UUID's

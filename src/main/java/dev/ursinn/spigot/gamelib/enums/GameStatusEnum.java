@@ -40,7 +40,8 @@ public enum GameStatusEnum {
     RESTART_LOBBY(3),
     RESTART(4),
     STARTED(5),
-    STOPPED(6);
+    STOPPED(6),
+    SETUP(7);
 
     private final int id;
 

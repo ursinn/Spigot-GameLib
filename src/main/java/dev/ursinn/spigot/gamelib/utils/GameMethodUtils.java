@@ -89,7 +89,7 @@ public class GameMethodUtils {
     /**
      * Spawns a Villager (NPC)
      *
-     * @param name Villager Name
+     * @param name     Villager Name
      * @param location Location
      * @since 1.0
      */
@@ -132,8 +132,8 @@ public class GameMethodUtils {
 
     /**
      * Runs worldSettings on All Loaded Worlds
-     * @see #worldSettings(String)
      *
+     * @see #worldSettings(String)
      * @since 1.0
      */
     public void worldSettings() {

@@ -25,51 +25,22 @@
 
 package dev.ursinn.spigot.gamelib.helpers;
 
-import org.bukkit.GameMode;
-import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.plugin.Plugin;
 
 /**
- * Helper - Player
+ * Helper - Arena
  *
  * @author Ursin Filli
  * @version 1.0
  * @since 1.0
  */
-public class GamePlayerHelper {
+public class GameArenaHelper {
 
-    private final PlayerInventory inventory;
-    private final GameMode gameMode;
+    private final Plugin plugin;
 
-    /**
-     * Constructor
-     *
-     * @param inventory Player Inventory
-     * @param gameMode  Player GameMode
-     * @since 1.0
-     */
-    public GamePlayerHelper(PlayerInventory inventory, GameMode gameMode) {
-        this.inventory = inventory;
-        this.gameMode = gameMode;
+    public GameArenaHelper(Plugin plugin) {
+        this.plugin = plugin;
     }
 
-    /**
-     * Get The Players saved Inventory
-     *
-     * @return Player Inventory
-     * @since 1.0
-     */
-    public PlayerInventory getInventory() {
-        return inventory;
-    }
-
-    /**
-     * Get The Players saved GameMode
-     *
-     * @return Player GameMode
-     * @since 1.0
-     */
-    public GameMode getGameMode() {
-        return gameMode;
-    }
 
 }

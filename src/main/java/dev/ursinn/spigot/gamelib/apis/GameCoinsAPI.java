@@ -115,7 +115,7 @@ public class GameCoinsAPI {
     /**
      * Give Player Coins
      *
-     * @param uuid Player UUID
+     * @param uuid  Player UUID
      * @param value Coins
      * @since 1.0
      */

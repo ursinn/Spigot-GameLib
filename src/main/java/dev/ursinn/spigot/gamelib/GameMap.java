@@ -47,13 +47,13 @@ public class GameMap {
     /**
      * Constructor
      *
-     * @param name Map Name
-     * @param authors Map Authors
-     * @param spawn Spawn Location
-     * @param maxPlayers max Players for Map
+     * @param name                        Map Name
+     * @param authors                     Map Authors
+     * @param spawn                       Spawn Location
+     * @param maxPlayers                  max Players for Map
      * @param spawnProtectionBottomHeight Spawn Protection Height (Used in Some Games)
-     * @param bottomHeight Bottom Height (Used in Some Games)
-     * @param topHeight Top Height (Used in Some Games)
+     * @param bottomHeight                Bottom Height (Used in Some Games)
+     * @param topHeight                   Top Height (Used in Some Games)
      */
     public GameMap(String name, String authors, Location spawn, int maxPlayers, int spawnProtectionBottomHeight, int bottomHeight, int topHeight) {
         this.name = name;
