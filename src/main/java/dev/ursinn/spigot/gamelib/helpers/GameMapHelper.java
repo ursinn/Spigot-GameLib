@@ -44,8 +44,9 @@ import java.io.IOException;
  */
 public class GameMapHelper {
 
-    File file;
-    FileConfiguration configuration;
+    private final Plugin plugin;
+    private final File file;
+    private final FileConfiguration configuration;
 
     /**
      * Constructor
@@ -54,6 +55,7 @@ public class GameMapHelper {
      * @since 1.0
      */
     public GameMapHelper(Plugin plugin) {
+        this.plugin = plugin;
         this.file = new File(plugin.getDataFolder(), "maps.yml");
         configuration = new YamlConfiguration();
         load();
@@ -84,7 +86,7 @@ public class GameMapHelper {
     /**
      * Add a Map
      *
-     * @param map Game Map
+     * @param map GameMap
      * @since 1.0
      */
     public void addMap(GameMap map) {

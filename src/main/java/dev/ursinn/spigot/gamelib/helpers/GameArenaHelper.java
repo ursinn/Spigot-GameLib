@@ -25,7 +25,14 @@
 
 package dev.ursinn.spigot.gamelib.helpers;
 
+import dev.ursinn.spigot.gamelib.Arena;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Helper - Arena
@@ -37,10 +44,69 @@ import org.bukkit.plugin.Plugin;
 public class GameArenaHelper {
 
     private final Plugin plugin;
+    private final File file;
+    private final FileConfiguration configuration;
 
+    /**
+     * Constructor
+     *
+     * @param plugin Plugin instance
+     * @since 1.0
+     */
     public GameArenaHelper(Plugin plugin) {
         this.plugin = plugin;
+        this.file = new File(plugin.getDataFolder(), "arenas.yml");
+        configuration = new YamlConfiguration();
+        load();
     }
 
+    /**
+     * Add a Arena
+     *
+     * @param arena Arena
+     * @since 1.0
+     */
+    public void addArena(Arena arena) {
+        // TODO
+        save();
+    }
+
+    /**
+     * Remove a Arena
+     *
+     * @param name Name of the Arena
+     * @since 1.0
+     */
+    public void removeMap(String name) {
+        // TODO
+        save();
+    }
+
+    /**
+     * Save The File to the Disk
+     *
+     * @since 1.0
+     */
+    private void save() {
+        try {
+            if (!file.exists())
+                configuration.save(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Load The File from the Disk
+     *
+     * @since 1.0
+     */
+    public void load() {
+        try {
+            configuration.load(file);
+        } catch (IOException | InvalidConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
