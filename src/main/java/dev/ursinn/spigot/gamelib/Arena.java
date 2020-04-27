@@ -47,9 +47,10 @@ public class Arena {
     /**
      * Constructor
      *
-     * @param name Arena name
-     * @param map GameMap
+     * @param name  Arena name
+     * @param map   GameMap
      * @param lobby Lobby Location
+     * @since 1.0
      */
     public Arena(String name, GameMap map, Location lobby) {
         this.name = name;
@@ -61,6 +62,7 @@ public class Arena {
      * Get Arena name
      *
      * @return name
+     * @since 1.0
      */
     public String getName() {
         return name;
@@ -70,6 +72,7 @@ public class Arena {
      * Get GameMap
      *
      * @return GameMap
+     * @since 1.0
      */
     public GameMap getMap() {
         return map;
@@ -79,6 +82,7 @@ public class Arena {
      * Set GameMap
      *
      * @param map GameMap
+     * @since 1.0
      */
     public void setMap(GameMap map) {
         this.map = map;
@@ -88,6 +92,7 @@ public class Arena {
      * Get Lobby Location
      *
      * @return Location
+     * @since 1.0
      */
     public Location getLobby() {
         return lobby;
@@ -97,6 +102,7 @@ public class Arena {
      * Get Players
      *
      * @return Players of Arena
+     * @since 1.0
      */
     public ArrayList<UUID> getPlayers() {
         return players;
@@ -106,6 +112,7 @@ public class Arena {
      * Add Player
      *
      * @param uuid Player UUID
+     * @since 1.0
      */
     public void addPlayer(UUID uuid) {
         players.add(uuid);
@@ -115,6 +122,7 @@ public class Arena {
      * Remove Player
      *
      * @param uuid Player UUID
+     * @since 1.0
      */
     public void removePlayer(UUID uuid) {
         players.remove(uuid);

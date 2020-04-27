@@ -54,6 +54,7 @@ public class GameMap {
      * @param spawnProtectionBottomHeight Spawn Protection Height (Used in Some Games)
      * @param bottomHeight                Bottom Height (Used in Some Games)
      * @param topHeight                   Top Height (Used in Some Games)
+     * @since 1.0
      */
     public GameMap(String name, String authors, Location spawn, int maxPlayers, int spawnProtectionBottomHeight, int bottomHeight, int topHeight) {
         this.name = name;
@@ -65,30 +66,72 @@ public class GameMap {
         this.topHeight = topHeight;
     }
 
+    /**
+     * Get Map Name
+     *
+     * @return name
+     * @since 1.0
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Get Map Authors
+     *
+     * @return authors
+     * @since 1.0
+     */
     public String getAuthors() {
         return authors;
     }
 
+    /**
+     * Get Spawn Location
+     *
+     * @return Location
+     * @since 1.0
+     */
     public Location getSpawn() {
         return spawn;
     }
 
+    /**
+     * Get Max Players
+     *
+     * @return max Players
+     * @since 1.0
+     */
     public int getMaxPlayers() {
         return maxPlayers;
     }
 
+    /**
+     * Get Spawn Protection Bottom Height
+     *
+     * @return Bottom Height
+     * @since 1.0
+     */
     public int getSpawnProtectionBottomHeight() {
         return spawnProtectionBottomHeight;
     }
 
+    /**
+     * Get Bottom Height
+     *
+     * @return Bottom Height
+     * @since 1.0
+     */
     public int getBottomHeight() {
         return bottomHeight;
     }
 
+    /**
+     * Get Top Height
+     *
+     * @return Top Height
+     * @since 1.0
+     */
     public int getTopHeight() {
         return topHeight;
     }
